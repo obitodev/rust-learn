@@ -72,7 +72,7 @@
 //         let mut saltar: i32 = 0;
 
 //         // Sumar valores en additions
-//         for element_index in additions {
+//         for &element_index in &additions {
 //             let addition_aux = values[element_index];
 //             addition = addition_aux + addition;
 //         }
