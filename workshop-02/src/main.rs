@@ -90,14 +90,14 @@
 
 
 // fn main(){
-
+//     iter_num(201290);
 // }
 
 // pub fn iter_num(num: i32) -> bool {
 
 //     let num_str = num.to_string();
 //     let chars = num_str.chars(); // <-- move occurs because `chars` has type `Chars<'_>`, which does not implement the `Copy` trait
-//     let len = chars.count();     // <-- `chars` moved due to this method call
+//     let len = chars.clone().count();     // <-- `chars` moved due to this method call
 
 //     println!("Len = {:?}", len);
 
