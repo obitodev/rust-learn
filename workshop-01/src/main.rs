@@ -24,7 +24,7 @@ fn main() {
     let mut line = String::new();
     println!("Enter 1 char :");
     std::io::stdin().read_line(&mut line).unwrap();
-    let input_char = line.chars().nth(0).unwrap();
+    let input_char = line.to_ascii_lowercase().chars().nth(0).unwrap();
 
     let mut count = 0;
     for c in input.chars() {
