@@ -48,22 +48,67 @@
 ///////////////////////////////////////////
 
 
+// fn main() {
+//     let a = A {p: Some("p".to_string())};
+//     a.a();
+// }
+
+// struct A {
+//     p: Option<String>
+// }
+
+
+// impl A {
+//     fn a(self) -> Self {
+//         Self::b(&self.p.clone().unwrap());
+//         self
+//     }
+//     fn b(b: &str) {
+//         print!("b: {}", b)
+//     }
+// }
+
+///////////////////////////////////////////
+// BAI 4
+// Yêu cầu :
+// + Sửa lại code sao cho compile cho đúng 
+///////////////////////////////////////////
+
+
+
+
+
+
+#[derive(Debug, Clone)]
+struct MyData {
+    val1: i32,
+    val2: String,
+}
+
+
+
 fn main() {
-    let a = A {p: Some("p".to_string())};
-    a.a();
+    let d = MyData {
+        val1: 35,
+        val2: String::from("Hello World"),
+    };
+
+    let both = d.get_both();
+    let x = d.get_val1();
+    let y = d.get_val2();
 }
 
-struct A {
-    p: Option<String>
-}
 
-
-impl A {
-    fn a(self) -> Self {
-        Self::b(&self.p.clone().unwrap());
-        self
+impl MyData {
+    pub fn get_val1(&self) -> i32 {
+        return self.val1.clone();
     }
-    fn b(b: &str) {
-        print!("b: {}", b)
+
+    pub fn get_val2(&self) -> String {
+        return self.val2.clone();
+    }
+
+    pub fn get_both(&self) -> (i32, String) {
+        return (self.val1, self.val2.to_string());
     }
 }
